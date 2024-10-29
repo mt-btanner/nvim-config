@@ -29,8 +29,11 @@ vim.keymap.set(
 )
 vim.keymap.set("n", "<leader>rca", "<cmd>! rubocop -a %<CR>", { desc = "Rubocop safe autocorrect current file" })
 
--- Diagnostic keymaps
+-- LSP
 vim.keymap.set("n", "<leader>i", vim.diagnostic.open_float, { desc = "Show line diagnostics", remap = true })
+vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Go to definition", remap = true })
+vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "Go to references", remap = true })
+vim.keymap.set("n", "<leader>ar", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename", remap = true })
 
 -- Split windows
 vim.keymap.set("n", "<leader>-", "<C-W>s<C-W>j", { desc = "Split window below", remap = true })
