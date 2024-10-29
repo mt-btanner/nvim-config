@@ -23,19 +23,3 @@ for name, config in pairs(servers) do
         end,
     })
 end
-
--- works, but leaves buffer unsaved no matter how many times you save
--- vim.api.nvim_create_autocmd("BufWriteCmd", {
---   group = vim.api.nvim_create_augroup("TS_code_actions", { clear = true }),
---   desc = "Run safe tsserver code actions on save",
---   pattern = { "*.ts", "*.tsx", "*.js", "*.jsx" },
---   callback = function()
---     vim.lsp.buf.code_action({
---       apply = true,
---       context = {
---         only = { "source.removeUnusedImports.ts" },
---       },
---     })
---     vim.cmd("write")
---   end,
--- })
