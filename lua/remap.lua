@@ -14,7 +14,7 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highl
 vim.keymap.set(
 	"n",
 	"<leader>lf",
-	"<cmd>lua vim.lsp.buf.format({ timeout_ms = 2000, filter = function(client) return client.name ~= 'tsserver' end })<CR>",
+	"<cmd>%! cat % | prettierd %<CR>",
 	{ desc = "Format buffer", remap = true }
 )
 vim.keymap.set(
