@@ -34,6 +34,7 @@ vim.keymap.set("n", "<leader>i", vim.diagnostic.open_float, { desc = "Show line 
 vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Go to definition", remap = true })
 vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "Go to references", remap = true })
 vim.keymap.set("n", "<leader>ar", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename all occurrences", remap = true })
+vim.keymap.set("i", "<C-n>", "<C-x><C-o>", { desc = "Trigger LSP completion" })
 
 -- Split windows
 vim.keymap.set("n", "<leader>-", "<C-W>s<C-W>j", { desc = "Split window below", remap = true })

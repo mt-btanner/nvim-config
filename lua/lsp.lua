@@ -23,3 +23,29 @@ for name, config in pairs(servers) do
         end,
     })
 end
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  group = vim.api.nvim_create_augroup("TS_add_missing_imports", { clear = true }),
+  desc = "TS_add_missing_imports",
+  pattern = { "*.ts", "*.tsx", "*.js", "*jsx" },
+  callback = function()
+    vim.lsp.buf.code_action({
+      apply = true,
+      context = {
+        only = { "source.addMissingImports.ts" },
+      },
+    })
+	vim.defer_fn(function()
+		if vim.bo.modified then
+			vim.cmd('write')
+		end
+	end, 100)
+  end,
+})
+
+-- vim.api.nvim_create_autocmd("LspAttach", {
+--     callback = function (ev)
+--         vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+--         -- ...
+--     end,
+-- })
