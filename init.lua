@@ -16,13 +16,14 @@ vim.opt.shiftwidth = 4
 vim.opt.showmode = false
 vim.opt.softtabstop = 4
 vim.opt.swapfile = false
-vim.opt.timeoutlen = 400
-vim.opt.tabstop = 4
+vim.opt.timeoutlen = 500
+vim.opt.tabstop = 2
 vim.opt.termguicolors = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 vim.opt.updatetime = 200
 vim.opt.wrap = true
+vim.opt.signcolumn = "yes"
 
 require("oil").setup()
 require("nvim-treesitter.configs").setup({

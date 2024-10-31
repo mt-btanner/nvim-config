@@ -40,7 +40,7 @@ vim.keymap.set("i", "<C-n>", "<C-x><C-o>", { desc = "Trigger LSP completion" })
 vim.keymap.set("n", "<leader>-", "<C-W>s<C-W>j", { desc = "Split window below", remap = true })
 vim.keymap.set("n", "+", "<C-W>+", { desc = "Increase window height", remap = true })
 vim.keymap.set("n", "-", "<C-W>-", { desc = "Decrease window height", remap = true })
-vim.keymap.set("n", "<leader>/", "<C-W>v<C-W>l", { desc = "Split window right", remap = true })
+vim.keymap.set("n", "<leader>|", "<C-W>v<C-W>l", { desc = "Split window right", remap = true })
 
 -- Switch windows
 vim.keymap.set("n", "<C-h>", "<C-W>h", { desc = "Switch to left window", remap = true })
