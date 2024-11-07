@@ -26,11 +26,21 @@ vim.opt.wrap = true
 vim.opt.signcolumn = "yes"
 
 require("oil").setup()
+
 require("nvim-treesitter.configs").setup({
 	ensure_installed = { "ruby", "typescript" },
 	sync_install = false,
 	auto_install = true,
 })
-require('gitsigns').setup()
+
+require('gitsigns').setup({
+	signs = {
+		add = { text = '+' },
+		change = { text = '~' },
+		delete = { text = '_' },
+		topdelete = { text = '‾' },
+		changedelete = { text = '~' },
+	},
+})
 
 vim.cmd("colorscheme gruvbox8")
