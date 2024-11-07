@@ -14,7 +14,7 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highl
 vim.keymap.set(
 	"n",
 	"<leader>lf",
-	"<cmd>%! cat % | prettierd %<CR>",
+	"<cmd>silent !prettier --write '%'<CR>",
 	{ desc = "Format buffer", remap = true }
 )
 vim.keymap.set(

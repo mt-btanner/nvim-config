@@ -19,7 +19,6 @@ for name, config in pairs(servers) do
         pattern = config.filetypes,
         callback = function (ev)
             vim.lsp.start(servers[name], { bufnr = ev.buf })
-			vim.notify("Started LSP: " .. name)
         end,
     })
 end
