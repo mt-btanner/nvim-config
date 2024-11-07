@@ -31,5 +31,6 @@ require("nvim-treesitter.configs").setup({
 	sync_install = false,
 	auto_install = true,
 })
+require('gitsigns').setup()
 
 vim.cmd("colorscheme gruvbox8")

@@ -26,4 +26,5 @@ return {
 	  opts = {},
 	  dependencies = { { "nvim-tree/nvim-web-devicons", opts = {} } }, },
   { 'tpope/vim-fugitive' },
+	{ 'lewis6991/gitsigns.nvim' },
 }
