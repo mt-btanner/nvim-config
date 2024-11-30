@@ -22,12 +22,12 @@ vim.keymap.set(
 	"<leader>rc", "<cmd>10new | exe 'terminal rubocop ' .. shellescape(expand('#'), 1)<CR>",
 	{ desc = "Run rubocop on current file" }
 )
+vim.keymap.set("n", "<leader>ra", "<cmd>! rubocop -a %<CR>", { desc = "Rubocop safe autocorrect current file" })
 vim.keymap.set(
 	"n",
 	"<leader>rs", "<cmd>tabnew | exe 'terminal bundle exec rspec ' .. shellescape(expand('#'), 1)<CR>",
 	{ desc = "Run rspec on current file" }
 )
-vim.keymap.set("n", "<leader>rca", "<cmd>! rubocop -a %<CR>", { desc = "Rubocop safe autocorrect current file" })
 
 -- LSP
 vim.keymap.set("n", "<leader>i", vim.diagnostic.open_float, { desc = "Show line diagnostics", remap = true })
@@ -47,3 +47,12 @@ vim.keymap.set("n", "<C-h>", "<C-W>h", { desc = "Switch to left window", remap =
 vim.keymap.set("n", "<C-j>", "<C-W>j", { desc = "Switch to below window", remap = true })
 vim.keymap.set("n", "<C-k>", "<C-W>k", { desc = "Switch to above window", remap = true })
 vim.keymap.set("n", "<C-l>", "<C-W>l", { desc = "Switch to right window", remap = true })
+
+-- GrugFar
+vim.keymap.set("n", "<leader>rg", "<cmd>GrugFar<CR>", { desc = "Grug far!!", remap = true })
+
+-- Persistence
+vim.keymap.set("n", "<leader>qs", function() require("persistence").load() end, { desc = "Load session for pwd", remap = true })
+vim.keymap.set("n", "<leader>qS", function() require("persistence").select() end, { desc = "Choose session to reload", remap = true })
+vim.keymap.set("n", "<leader>ql", function() require("persistence").load({ last = true }) end, { desc = "Load last session", remap = true })
+vim.keymap.set("n", "<leader>qd", function() require("persistence").stop() end, { desc = "Don't save this session", remap = true })
