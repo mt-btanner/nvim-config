@@ -99,7 +99,7 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
-		extensions = { "oil" }
+		extensions = { "oil" },
 	},
 	{
 		"folke/persistence.nvim",
@@ -107,5 +107,59 @@ return {
 		opts = {
 			need = 0,
 		},
+	},
+	{ "hrsh7th/cmp-buffer" },
+	{ "hrsh7th/cmp-nvim-lsp" },
+	{ "hrsh7th/cmp-path" },
+	{ "hrsh7th/cmp-cmdline" },
+	{
+		"hrsh7th/nvim-cmp",
+		config = function()
+			local cmp = require("cmp")
+
+			cmp.setup({
+				completion = {
+					completeopt = "menu,menuone,noinsert",
+				},
+				snippet = {
+					expand = function(args)
+						vim.snippet.expand(args.body)
+					end,
+				},
+				window = {
+					completion = cmp.config.window.bordered(),
+					documentation = cmp.config.window.bordered(),
+				},
+				mapping = cmp.mapping.preset.insert({
+					["<CR>"] = cmp.mapping.confirm({ select = true }),
+				}),
+				sources = cmp.config.sources({
+					{ name = "nvim_lsp" },
+				}, {
+					{ name = "buffer" },
+				}),
+				-- `/` cmdline setup.
+				cmp.setup.cmdline("/", {
+					mapping = cmp.mapping.preset.cmdline(),
+					sources = {
+						{ name = "buffer" },
+					},
+				}),
+				-- `:` cmdline setup.
+				cmp.setup.cmdline(":", {
+					mapping = cmp.mapping.preset.cmdline(),
+					sources = cmp.config.sources({
+						{ name = "path" },
+					}, {
+						{
+							name = "cmdline",
+							option = {
+								ignore_cmds = { "Man", "!" },
+							},
+						},
+					}),
+				}),
+			})
+		end,
 	},
 }
