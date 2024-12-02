@@ -67,7 +67,7 @@ require("lualine").setup({
 		ignore_focus = {},
 		always_divide_middle = true,
 		always_show_tabline = false,
-		globalstatus = false,
+		globalstatus = true,
 		refresh = {
 			statusline = 100,
 			tabline = 100,
@@ -78,7 +78,7 @@ require("lualine").setup({
 		lualine_a = { "mode" },
 		lualine_b = { "branch", "diff", "diagnostics" },
 		lualine_c = { "filename" },
-		lualine_x = { "encoding", "fileformat", "filetype" },
+		lualine_x = { "searchcount", "filetype" },
 		lualine_y = { "progress" },
 		lualine_z = { "location" },
 	},
