@@ -77,7 +77,7 @@ require("lualine").setup({
 	sections = {
 		lualine_a = { "mode" },
 		lualine_b = { "branch", "diff", "diagnostics" },
-		lualine_c = { "filename" },
+		lualine_c = { { "filename", path = 1 } },
 		lualine_x = { "searchcount", "filetype" },
 		lualine_y = { "progress" },
 		lualine_z = { "location" },
@@ -94,6 +94,20 @@ require("lualine").setup({
 	winbar = {},
 	inactive_winbar = {},
 	extensions = {},
+})
+
+require("lint").linters_by_ft = {
+	ruby = { "rubocop" },
+	javascript = { "eslint" },
+	typescript = { "eslint" },
+	typescriptreact = { "eslint" },
+	javascriptreact = { "eslint" },
+}
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+	callback = function()
+		require("lint").try_lint()
+	end,
 })
 
 vim.cmd("colorscheme gruvbox8")
