@@ -27,7 +27,13 @@ vim.opt.wrap = true
 vim.opt.signcolumn = "yes"
 vim.opt.cmdheight = 0
 
-require("oil").setup()
+require("oil").setup({
+	delete_to_trash = true,
+	skip_confirm_for_simple_edits = true,
+	view_options = {
+		show_hidden = true,
+	},
+})
 
 require("nvim-treesitter.configs").setup({
 	ensure_installed = { "ruby", "typescript" },
