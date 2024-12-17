@@ -74,6 +74,7 @@ return {
 		"stevearc/conform.nvim",
 		event = { "BufWritePre" },
 		cmd = { "ConformInfo" },
+		quiet = true,
 		keys = {
 			{
 				"<leader>lf",
