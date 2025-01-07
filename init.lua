@@ -26,6 +26,7 @@ vim.opt.updatetime = 200
 vim.opt.wrap = true
 vim.opt.signcolumn = "yes"
 vim.opt.cmdheight = 0
+vim.opt.splitright = true
 
 require("oil").setup({
 	delete_to_trash = true,
