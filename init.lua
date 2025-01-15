@@ -117,4 +117,4 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 	end,
 })
 
-vim.cmd("colorscheme gruvbox8")
+vim.cmd("colorscheme tokyonight")

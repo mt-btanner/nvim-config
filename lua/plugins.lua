@@ -171,4 +171,10 @@ return {
 		end,
 	},
 	{ "mfussenegger/nvim-lint" },
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
 }
