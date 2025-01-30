@@ -43,7 +43,12 @@ vim.keymap.set("n", "<leader>-", "<C-W>s<C-W>j", { desc = "Split window below", 
 vim.keymap.set("n", "+", "<C-W>+", { desc = "Increase window height", remap = true })
 vim.keymap.set("n", "-", "<C-W>-", { desc = "Decrease window height", remap = true })
 vim.keymap.set("n", "<leader>|", "<C-W>v<C-W>l", { desc = "Split window right", remap = true })
-vim.keymap.set("n", "<leader>vt", "<cmd> vsplit | terminal<CR>", { desc = "Open terminal in right split", remap = true })
+vim.keymap.set(
+	"n",
+	"<leader>vt",
+	"<cmd> vsplit | terminal<CR>",
+	{ desc = "Open terminal in right split", remap = true }
+)
 
 -- Switch windows
 vim.keymap.set("n", "<C-h>", "<C-W>h", { desc = "Switch to left window", remap = true })
@@ -67,3 +72,6 @@ end, { desc = "Load last session", remap = true })
 vim.keymap.set("n", "<leader>qd", function()
 	require("persistence").stop()
 end, { desc = "Don't save this session", remap = true })
+
+-- Fugitive
+vim.keymap.set("n", "<leader>gs", "<cmd>:G<CR>", { desc = "Open git status", remap = true })
