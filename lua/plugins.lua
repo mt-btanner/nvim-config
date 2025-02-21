@@ -177,4 +177,9 @@ return {
 		priority = 1000,
 		opts = {},
 	},
+	{
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
+	},
 }
