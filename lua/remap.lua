@@ -75,3 +75,7 @@ end, { desc = "Don't save this session", remap = true })
 
 -- Fugitive
 vim.keymap.set("n", "<leader>gs", "<cmd>:G<CR>", { desc = "Open git status", remap = true })
+
+-- Copilot
+vim.keymap.set("n", "<leader>ce", "<cmd>:Copilot enable<CR>", { desc = "Enable Copilot", remap = true })
+vim.keymap.set("n", "<leader>cd", "<cmd>:Copilot disable<CR>", { desc = "Disable Copilot", remap = true })
