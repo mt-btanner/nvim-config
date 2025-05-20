@@ -25,6 +25,12 @@ vim.keymap.set(
 	"<cmd>tabnew | exe 'terminal bundle exec rspec ' .. shellescape(expand('#'), 1)<CR>",
 	{ desc = "Run rspec on current file" }
 )
+vim.keymap.set(
+	"n",
+	"<leader>mt",
+	"<cmd>tabnew | exe 'terminal bundle exec rake test TEST=' .. shellescape(expand('#'), 1)<CR>",
+	{ desc = "Run minitest on current file" }
+)
 
 -- LSP
 vim.keymap.set("n", "<leader>i", vim.diagnostic.open_float, { desc = "Show line diagnostics", remap = true })
