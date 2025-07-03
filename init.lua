@@ -111,6 +111,26 @@ require("lint").linters_by_ft = {
 	javascriptreact = { "eslint" },
 }
 
+require("neotest").setup({
+	adapters = {
+		require("neotest-jest")({
+			jestCommand = "yarn jest --",
+			cwd = function()
+				return vim.fn.getcwd()
+			end,
+		}),
+		require("neotest-rspec")({
+			command = "bundle exec rspec",
+		}),
+		require("neotest-playwright").adapter({
+			options = {
+				persist_project_selection = true,
+				enable_dynamic_test_discovery = true,
+			},
+		}),
+	},
+})
+
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 	callback = function()
 		require("lint").try_lint()

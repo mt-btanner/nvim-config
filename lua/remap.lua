@@ -88,3 +88,20 @@ vim.keymap.set("n", "<leader>cd", "<cmd>:Copilot disable<CR>", { desc = "Disable
 
 -- Import sorting
 vim.keymap.set("n", "<leader>si", "<cmd>silent !npx eslint --fix '%'<CR>", { desc = "Sort Imports", remap = true })
+
+-- Neotest
+vim.keymap.set("n", "<leader>nt", function()
+	require("neotest").run.run(vim.fn.expand("%"))
+end, { desc = "Test current file", remap = true })
+vim.keymap.set("n", "<leader>nf", function()
+	require("neotest").run.run()
+end, { desc = "Test nearest function", remap = true })
+vim.keymap.set("n", "<leader>nw", function()
+	require("neotest").watch.watch(vim.fn.expand("%"))
+end, { desc = "Test watch current file", remap = true })
+vim.keymap.set("n", "<leader>ns", function()
+	require("neotest").watch.stop(vim.fn.expand("%"))
+end, { desc = "Stop test watch", remap = true })
+vim.keymap.set("n", "<leader>no", function()
+	require("neotest").output.open()
+end, { desc = "Open test output", remap = true })
