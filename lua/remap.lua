@@ -86,8 +86,13 @@ vim.keymap.set("n", "<leader>gs", "<cmd>:G<CR>", { desc = "Open git status", rem
 vim.keymap.set("n", "<leader>ce", "<cmd>:Copilot enable<CR>", { desc = "Enable Copilot", remap = true })
 vim.keymap.set("n", "<leader>cd", "<cmd>:Copilot disable<CR>", { desc = "Disable Copilot", remap = true })
 
--- Import sorting
-vim.keymap.set("n", "<leader>si", "<cmd>silent !npx eslint --fix '%'<CR>", { desc = "Sort Imports", remap = true })
+-- Eslint
+vim.keymap.set(
+	"n",
+	"<leader>af",
+	"<cmd>silent !npx eslint --fix '%'<CR>",
+	{ desc = "Run ESlint autofix", remap = true }
+)
 
 -- Neotest
 vim.keymap.set("n", "<leader>nt", function()
