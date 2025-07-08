@@ -131,6 +131,43 @@ require("neotest").setup({
 	},
 })
 
+require("conform").setup({
+	formatters = {
+		prettier = {
+			require_cwd = true,
+			cwd = require("conform.util").root_file({
+				".prettierrc",
+				".prettierrc.json",
+				".prettierrc.yml",
+				".prettierrc.yaml",
+				".prettierrc.json5",
+				".prettierrc.js",
+				".prettierrc.cjs",
+				".prettierrc.mjs",
+				".prettierrc.toml",
+				"prettier.config.js",
+				"prettier.config.cjs",
+				"prettier.config.mjs",
+			}),
+		},
+	},
+	formatters_by_ft = {
+		lua = { "stylua" },
+		javascript = { "prettierd", "prettier", stop_after_first = true },
+		typescript = { "prettierd", "prettier", stop_after_first = true },
+		typescriptreact = { "prettierd", "prettier", stop_after_first = true },
+		javascriptreact = { "prettierd", "prettier", stop_after_first = true },
+		html = { "prettierd", "prettier", stop_after_first = true },
+		css = { "prettierd", "prettier", stop_after_first = true },
+		json = { "prettierd", "prettier", stop_after_first = true },
+		ruby = { "rubocop" },
+	},
+	format_on_save = {
+		timeout_ms = 1500,
+		lsp_format = "fallback",
+	},
+})
+
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 	callback = function()
 		require("lint").try_lint()
