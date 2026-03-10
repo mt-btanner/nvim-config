@@ -1,5 +1,10 @@
 require("mason").setup()
 require("mason-lspconfig").setup()
 
-require("lspconfig").lua_ls.setup({})
-require("lspconfig").ts_ls.setup({})
+vim.lsp.config("lua_ls", {})
+vim.lsp.config("ts_ls", {})
+vim.lsp.config("stylelint_lsp", {})
+vim.lsp.config("rubocop", {
+	cmd = { "bundle", "exec", "rubocop", "--lsp" },
+	root_dir = require("lspconfig").util.root_pattern("Gemfile", ".git", "."),
+})

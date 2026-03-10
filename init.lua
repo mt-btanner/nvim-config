@@ -109,6 +109,7 @@ require("lint").linters_by_ft = {
 	typescript = { "eslint" },
 	typescriptreact = { "eslint" },
 	javascriptreact = { "eslint" },
+	swift = { "swiftlint" },
 }
 
 require("neotest").setup({
@@ -134,7 +135,7 @@ require("neotest").setup({
 require("conform").setup({
 	formatters = {
 		prettier = {
-			require_cwd = true,
+			require_cwd = false,
 			cwd = require("conform.util").root_file({
 				".prettierrc",
 				".prettierrc.json",
@@ -150,6 +151,10 @@ require("conform").setup({
 				"prettier.config.mjs",
 			}),
 		},
+		rubocop = {
+			command = "bundle",
+			prepend_args = { "exec", "rubocop" },
+		},
 	},
 	formatters_by_ft = {
 		lua = { "stylua" },
@@ -159,8 +164,10 @@ require("conform").setup({
 		javascriptreact = { "prettierd", "prettier", stop_after_first = true },
 		html = { "prettierd", "prettier", stop_after_first = true },
 		css = { "prettierd", "prettier", stop_after_first = true },
+		scss = { "prettierd", "prettier", stop_after_first = true },
 		json = { "prettierd", "prettier", stop_after_first = true },
 		ruby = { "rubocop" },
+		eruby = { "erb_format" },
 	},
 	format_on_save = {
 		timeout_ms = 1500,
