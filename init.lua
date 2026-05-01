@@ -134,7 +134,7 @@ require("neotest").setup({
 
 require("conform").setup({
 	formatters = {
-		prettier = {
+		prettierd = {
 			require_cwd = false,
 			cwd = require("conform.util").root_file({
 				".prettierrc",
@@ -158,14 +158,14 @@ require("conform").setup({
 	},
 	formatters_by_ft = {
 		lua = { "stylua" },
-		javascript = { "prettierd", "prettier", stop_after_first = true },
-		typescript = { "prettierd", "prettier", stop_after_first = true },
-		typescriptreact = { "prettierd", "prettier", stop_after_first = true },
-		javascriptreact = { "prettierd", "prettier", stop_after_first = true },
-		html = { "prettierd", "prettier", stop_after_first = true },
-		css = { "prettierd", "prettier", stop_after_first = true },
-		scss = { "prettierd", "prettier", stop_after_first = true },
-		json = { "prettierd", "prettier", stop_after_first = true },
+		javascript = { "prettierd", stop_after_first = true },
+		typescript = { "prettierd", stop_after_first = true },
+		typescriptreact = { "prettierd", stop_after_first = true },
+		javascriptreact = { "prettierd", stop_after_first = true },
+		html = { "prettierd", stop_after_first = true },
+		css = { "prettierd", stop_after_first = true },
+		scss = { "prettierd", stop_after_first = true },
+		json = { "prettierd", stop_after_first = true },
 		ruby = { "rubocop" },
 		eruby = { "erb_format" },
 	},
