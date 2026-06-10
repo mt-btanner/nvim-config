@@ -82,13 +82,6 @@ end, { desc = "Don't save this session", remap = true })
 -- Fugitive
 vim.keymap.set("n", "<leader>gs", "<cmd>:G<CR>", { desc = "Open git status", remap = true })
 
--- Copilot
-vim.keymap.set("n", "<leader>ce", "<cmd>:Copilot enable<CR>", { desc = "Enable Copilot", remap = true })
-vim.keymap.set("n", "<leader>cd", "<cmd>:Copilot disable<CR>", { desc = "Disable Copilot", remap = true })
-vim.keymap.set("n", "<leader>cc", "<cmd>:CopilotChatOpen<CR>", { desc = "Open Copilot Chat", remap = true })
-vim.keymap.set("n", "<leader>cq", "<cmd>:CopilotChatClose<CR>", { desc = "Close Copilot Chat", remap = true })
-vim.keymap.set("n", "<leader>cr", "<cmd>:CopilotChatReset<CR>", { desc = "Reset Copilot Chat", remap = true })
-
 -- Eslint
 vim.keymap.set(
 	"n",

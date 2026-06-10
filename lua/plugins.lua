@@ -165,7 +165,6 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
 	},
-	{ "github/copilot.vim" },
 	{
 		"nvim-neotest/neotest",
 		dependencies = {
@@ -177,12 +176,5 @@ return {
 			"olimorris/neotest-rspec",
 			"thenbe/neotest-playwright",
 		},
-	},
-	{
-		"CopilotC-Nvim/CopilotChat.nvim",
-		dependencies = {
-			{ "nvim-lua/plenary.nvim", branch = "master" },
-		},
-		build = "make tiktoken",
 	},
 }
